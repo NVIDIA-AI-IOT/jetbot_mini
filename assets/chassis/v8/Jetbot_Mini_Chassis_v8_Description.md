@@ -8,6 +8,8 @@ This chassis is among the thinnest designs, but has a turning issue as when look
 
 Note that this chassis design can potentially be improved by removing the fan and thus shifting the center of mass towards the center, improving the robot's ability to turn. 
 
+## Specifications
+
 | Field | Value | Unit |
 | :--- | :--- | :--- |
 | Weight | 422 | g | 
