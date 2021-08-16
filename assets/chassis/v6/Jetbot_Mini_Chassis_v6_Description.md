@@ -6,6 +6,8 @@
 
 This chassis uses a horizontally mounted baseboard design, but is too long and thus fails the two-way traffic LEGO road specification. However, this design can potentially be optimized further with smaller wheels and a smaller battery, and thus is a good reference design. Also note that this designs uses the baseboard in the intended way, with the motors below the baseboard to connect easily to the motor headers. 
 
+## Specifications
+
 | Field | Value | Unit |
 | :--- | :--- | :--- |
 | Weight | 461.25 | g | 
@@ -16,7 +18,7 @@ This chassis uses a horizontally mounted baseboard design, but is too long and t
 | Center of Mass Height | 45.6 | mm | 
 | Max Speed Around Turn | ~0.46 | m/s |
 
-Calculations are explained in Chassis Documentation. 
+Calculations for some of the values are explained in Chassis Documentation. 
 
 ## Pololu Parts
 
