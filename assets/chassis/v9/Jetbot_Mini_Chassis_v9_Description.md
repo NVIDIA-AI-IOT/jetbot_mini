@@ -4,7 +4,9 @@
 <img src=/assets/images/chassis/Jetbot_Mini_v9_Vertical_Chassis.PNG height="350px"/>
 </p>
 
-This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was overall the smallest chassis and did not have the turning issue of v8. The following are some specifications:
+This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was overall the smallest chassis and did not have the turning issue of v8. 
+
+## Specifications
 
 | Field | Value | Unit |
 | :--- | :--- | :--- |
