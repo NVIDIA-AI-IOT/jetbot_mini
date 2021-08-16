@@ -14,7 +14,7 @@ This project aims to be an accessible example project that uses the Jetson Nano 
 
 **Please note that the A00 Baseboard design is not recommended for manufacture, as it requires a rework to work properly and some features have not been fully validated. The A01 Baseboard is currently in development that aims to fix issues found with A00.**
 
-https://user-images.githubusercontent.com/46247601/128972489-15614e70-288f-4a71-8653-d59da6b53f3a.mp4
+https://user-images.githubusercontent.com/46247601/129587346-760dd624-837d-4d27-9475-d30973f9e246.mp4
 
 ## Get involved
 
