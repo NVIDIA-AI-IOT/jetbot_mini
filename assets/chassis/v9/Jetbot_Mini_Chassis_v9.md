@@ -18,4 +18,13 @@ This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was
 
 Calculations are explained in Chassis Documentation. 
 
+## Pololu Parts
+
+If you would like to use the same Pololu CAD files that I did to assemble the chassis, you can use the following links:
+| Part | Link |
+| :--- | :--- |
+| Ball Caster | https://www.pololu.com/product/950 |
+| Wheels | https://www.pololu.com/product/1088 |
+
+To download the CAD files, scroll down to the ribbon headers, click "Resources", and step files should be listed under "File Downloads".
 
