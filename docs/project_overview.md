@@ -72,3 +72,6 @@ Project Conception and Design Goal Specifications --> Schematic + Symbol Design 
 
 Specifics of the choices for batteries, schematic and layout design, and chassis design are found in their respective folders. 
 
+## Future Work
+
+A01 is still in development but will eventually be gerbered out and validated. In the meantime any Work-In-Progress bugs, features, and edits can be found in the [Issues](https://github.com/NVIDIA-AI-IOT/jetbot_mini/issues) tab of this repository; feel free to create issues, provide feedback and comment on the project! 
