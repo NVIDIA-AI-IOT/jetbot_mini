@@ -40,3 +40,12 @@ Also note that these are the prices as of August 17th, 2021, and are subject to 
 
 ## Useful Tools
 These are the tools I used to build the Jetbot Mini. 
+
+| Tool | Price | URL | Notes |
+| :--- | :--- | :--- | :--- | 
+| Soldering Iron | $104.95 | [Amazon](https://www.amazon.com/Hakko-FX888D-23BY-Digital-Soldering-Station/dp/B00ANZRT4M) | I love this soldering iron, but it its too pricey I can also recommend the X-Tronic 3020-XTS or Weller WLC100 |
+| Solder | $8.99 | [Amazon](https://www.amazon.com/YI-LIN-Electrical-Soldering-0-22lbs/dp/B08RHMPJW3/ref=sr_1_5?dchild=1&keywords=solder&qid=1629237533&s=hi&sr=1-5) | This is the solder I used, but it is leaded solder so use it at your own risk. Always have a fume extractor and be in a well-ventilated area. You can also use unleaded solder. |
+| Fume Extractor | $59.99 | [Amazon](https://www.amazon.com/Xytronic-0608426DLX-426DLX-Fume-Extractor/dp/B0007ZLH4Q/ref=sr_1_2?dchild=1&keywords=426dlx&qid=1629237656&sr=8-2) | This is the fume extractor I used, but there are cheaper options on Amazon. |
+| Third Hand | $19.99 | [Amazon](https://www.amazon.com/KOTTO-Soldering-Magnetic-Flexible-Workshop/dp/B083SFWLW7/ref=sr_1_2?dchild=1&keywords=third+arm+kotto&qid=1629237912&sr=8-2) | This is not a necessity but extremely useful if you can afford it. It helps a lot with holding what you are soldering, like wires, resistors, and capacitors in place. If you cannot afford one, I often use books, boxes or rubber bands to hold things steady while I solder. |
+| Wires cutters | $13.75 | [Amazon](https://www.amazon.com/Hakko-CSP-30-1-Stripper-Maximum-Capacity/dp/B00FZPHMUG/ref=sr_1_3?dchild=1&keywords=wire%2Bcutters%2Bcsp-30-1&qid=1629237765&sr=8-3&th=1) | These are the pair that I used, but there are many good options out there. A good quality set of wire cutters can last you years, so don't be afraid to invest a little. I've had my pair for 3 years and its served me well. |
+| Diagonal Cutters | $7.47 | [Amazon](https://www.amazon.com/Hakko-CHP-170-Micro-Cutter/dp/B00FZPDG1K/ref=sr_1_9?dchild=1&keywords=wire+cutters&qid=1629237705&sr=8-9) | These are the pair that I use to cut the male and female headers. There are plenty of other good options out there. |
