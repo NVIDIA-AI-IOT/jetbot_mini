@@ -43,3 +43,9 @@ To get setup for the layout design, you need the following SnapEDA footprint fil
 | B3SL-1022P | Push Button | SW1 | https://www.snapeda.com/parts/B3SL-1022P/Omron/view-part/215208/?ref=search&t=B3SL-1022P |
 | 1-1734248-5 | Camera Connectors | J2, J3 | https://www.snapeda.com/parts/1-1734248-5/TE%20Connectivity/view-part/?ref=te_in&t=1-1734248-5&con_ref=None |
 
+In order to import the footprints, go through the following steps:
+1. Download the KiCAD files to your computer
+2. Open the .pro file and click "Footprint Editor" on the top ribbon, the icon is a 6 pin package with green pins
+3. Go to File --> New Library --> Create library with name of your choice (should have .pretty extension) in place of your choice, it is typical to keep everything with the KiCAD files --> Choose local
+4. Your library should be created, then add the .kicad_mod files from the downloaded SnapEDA folders to the .pretty folder
+5. Open up the schematic and go to "Assign PCB footprints to schematic symbols" on the top ribbon, and assign the footprints from your custom library to each of the corresponding symbols
