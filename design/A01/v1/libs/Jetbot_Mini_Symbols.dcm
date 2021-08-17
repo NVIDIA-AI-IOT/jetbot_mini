@@ -1,0 +1,14 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP GS331
+D Single 1.8V Low-Power Open-Drain Output Comparator, SOT-23-5
+K cmp collector
+F http://ww1.microchip.com/downloads/en/DeviceDoc/MCP6566-6R-6U-7-9-1.8V-Low-Power-Open-Drain-Output-Comparator-DS20002143G.pdf
+$ENDCMP
+#
+$CMP VDD_SYS
+D Power symbol creates a global label with name "VDD"
+K power-flag
+$ENDCMP
+#
+#End Doc Library
