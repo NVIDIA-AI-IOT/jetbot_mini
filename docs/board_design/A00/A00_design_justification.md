@@ -54,7 +54,8 @@ In general:
 * CAM0 and CAM1 PWDN signals are level shifted from 1V8 to 3V3 for compatibility with new higher quality raspberry pi cameras; note that the B01 Developer Kit is not compatible with these cameras. 
 * U4 is a mux used to switch between camera 1 and camera 2. 
 * Note that when the Jetson Nano module boots up, it pings the camera I2C lanes to see if a camera module is attached and employs a startup sequence with PWDN; if no camera module is detected, calling camera commands will not send any data to the camera lanes. 
-* Note that only a 0.1 uF capacitor is needed on the power rail of the camera connector, as the parasitics from the ribbon cable that connects the camera module to the camera connector prevents the camera board from seeing the additional capacitors effectively. The current spikes that the capacitors are meant to deal with are negated by the inductance of the camera ribbon cable.  
+* Note that only a 0.1 uF capacitor is needed on the power rail of the camera connector, as the parasitics from the ribbon cable that connects the camera module to the camera connector prevents the camera board from seeing the additional capacitors effectively. The current spikes that the capacitors are meant to deal with are negated by the inductance of the camera ribbon cable.
+* R5 is a pull-down resistor for the camera select pin of the mux, so that the default setting for the mux is lane 1. 
 
 ### Page 3 of A00 Schematic: Motors
 
@@ -69,6 +70,7 @@ In general:
 * The MOD_SLEEP pin that controls standby for the motor controller (i.e., tells the motor controller to turn off for a bit and conserve power) is on 1V8 logic, and the STBY pin is on 3V3 logic, so the level shifter is needed to translate between the two voltage levels. 
 * Motor header is surface mount and placed underneath the board, as initially I thought that the chassis design would put the motors underneath the board, and so it would be easier to connect if the headers were on the bottom of the board. The Jetbot Mini test chassis ended up mounting the baseboard vertically, but it still worked out OK as the motors were in front of the motor headers.
 * Note that different motors were used than the Jetbot to facilitate a smaller chassis design; the motors chosen ended up having a lower stall current than the TT motors used for the Jetbot, and thus would mean less strain on the 5V Buck Converter. 
+* R59 pulls output enable high to enable the level shifter.
 
 ### Page 4 of A00 Schematic: USB
 
@@ -76,12 +78,26 @@ In general:
 <img src=/design/A00/schematic_pages/USB.PNG height="700px"/>
 </p>
 
+* This part of the circuit was heavily referenced from the B01 Developer Kit schematic.
+* TPD4E05U06DQAR ESD diodes were chosen due to their compability with USB devices and should be placed as close as possible to the connector on the layout.
+* MicroUSB: J7
+  * D1 to protect against ESD strikes when user pulls MicroUSB head in and out of the connector. 
+  * R7 pulls the gate of Q1 initially low, and when a microUSB is connected VBUS_DET is connected to ground and lets the Nano module know that something is connected.
+* USB3 Type-A: J8
+  * C7 and C8 are AC-coupling capacitors and should be placed as close as possible to the transmission source on the layout. AC-coupling capacitors block DC bias. 
+  * The USB switch U8 is needed to protect the host, as the USB might be drawing too much current, and also allows for power cycling the USB. The chosen part hits the required spec of max current draw for USB3 Type-A being 0.9 A. 
+  * Capacitor values chosen based off the datasheet. 0 ohm resistors there just in case ferrite beads need to be stuffed during validation or if found that they are necessary.
+  * C11 was switched from electrolytic to POSCAP to reduce the footprint size. 
 
 ### Page 5 of A00 Schematic: Fan
 
 <p align="left">
 <img src=/design/A00/schematic_pages/Fan.PNG height="700px"/>
 </p>
+
+* PWM level shifted to 5V to work properly with fan. 
+* C13 is a decoupling capacitor for power rail of the fan. 
+* 
 
 
 ### Page 6 of A00 Schematic: Power_1
