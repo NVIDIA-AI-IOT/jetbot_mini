@@ -40,3 +40,48 @@ I decided to go with the GOLDBAT because it was the smallest and cheapest batter
 In general:
 * 0 ohm resistors are used throughout the design for testing purposes; they can be used as points to attach probe wires and inject noise.
 * You will often see capacitors on the input rails to ICs and power supplies; these capacitors are there to help deal with noise, stabilize the power supply and voltage ripple, and help with sudden current requirements. The impedance of a capacitor is dictated by 1/jwC, where w is 2 x pi x frequency and C is the capacitance; at high frequencies, the impedance of a capacitor is near zero, which means the component is essentially a short to ground. This means high frequency noise is shunted to ground instead of entering the IC. Also, the capacitors act as small voltage reservoirs, and thus if the input voltage dips below the stored voltage, the capacitor can briefly supply power to the IC. In addition, the smaller 0.1uF capacitors are to help if the IC needs to pull a sharp current suddently, perhaps due to a change in load. Larger capacitors will have ESR (equivalent series resistance) and ESL (equivalent series inductance) which will fight against that current pull, but smaller capacitors have smaller parasitics that help facilitate large current draw. These small 0.1uF capacitors do not store that much power, but will help with the sudden rising and falling edges for things like digital circuits. 
+* The following [forum page](https://forum.digikey.com/t/calculating-capacitor-esr-from-tan/2633) is useful for calculating MLCC parasitic values. MLCC ESR and ESL values are also often listed on the manufacturer website in the form of graphs.
+
+### Page 2 of A00 Schematic: Camera
+
+* Most of the camera connector (J2 and J3) connections were referenced from the B01 Developer Kit files. 
+* No ESD on the CAM0_I2C_SDA, CAM0_I2C_SCL, CAM1_I2C_SDA, and CAM1_I2C_SCL lanes, as the TC7USB40FT has ESD on the output lines.
+* TPD4E05U06DQAR ESD diodes chosen due to availability in Seeed’s libraries and because they are compatible with USB 3.0; using these diodes for the CSI lanes eliminates the need for separate ESD diodes. They have 0.5pF capacitance. Datasheet states compatibility with high speed signals. 
+* CAM0 and CAM1 PWDN signals are level shifted from 1V8 to 3V3 for compatibility with new higher quality raspberry pi cameras; note that the B01 Developer Kit is not compatible with these cameras. 
+* U4 is a mux used to switch between camera 1 and camera 2. 
+* Note that when the Jetson Nano module boots up, it pings the camera I2C lanes to see if a camera module is attached and employs a startup sequence with PWDN; if no camera module is detected, calling camera commands will not send any data to the camera lanes. 
+* Note that only a 0.1 uF capacitor is needed on the power rail of the camera connector, as the parasitics from the ribbon cable that connects the camera module to the camera connector prevents the camera board from seeing the additional capacitors effectively. The current spikes that the capacitors are meant to deal with are negated by the inductance of the camera ribbon cable.  
+
+### Page 3 of A00 Schematic: Motors
+
+* The same motor controller IC as the Jetbot, the TB6612FNG, was used to ensure compatibility with Jetbot software. Note that the A00 baseboard uses GPIO instead of I2C to control the motors.
+* Motor speed is controlled via PWMA and PWMB. 
+* Motor A direction is controlled by AIN1 and AIN2, and motor B direction is controlled by BIN1 and BIN2. If both pins are off or on, the motor is turned off. See TB6612FNG datasheet or tutorial for exact directions based on pins. 
+* Capacitor values on power rails were suggested by datasheets, and voltage ratings are high because those capacitor values are used elsewhere on higher voltage lines; using the same capacitor saves cost by eliminating the need for a unique part on the BOM. 
+* The MOD_SLEEP pin that controls standby for the motor controller (i.e., tells the motor controller to turn off for a bit and conserve power) is on 1V8 logic, and the STBY pin is on 3V3 logic, so the level shifter is needed to translate between the two voltage levels. 
+* Motor header is surface mount and placed underneath the board, as initially I thought that the chassis design would put the motors underneath the board, and so it would be easier to connect if the headers were on the bottom of the board. The Jetbot Mini test chassis ended up mounting the baseboard vertically, but it still worked out OK as the motors were in front of the motor headers.
+* Note that different motors were used than the Jetbot to facilitate a smaller chassis design; the motors chosen ended up having a lower stall current than the TT motors used for the Jetbot, and thus would mean less strain on the 5V Buck Converter. 
+
+### Page 4 of A00 Schematic: USB
+
+
+
+### Page 5 of A00 Schematic: Fan
+
+### Page 6 of A00 Schematic: Power_1
+
+### Page 7 of A00 Schematic: Nano_IO
+
+### Page 8 of A00 Schematic: Power_3
+
+### Page 9 of A00 Schematic: Power_2
+
+### Page 10 of A00 Schematic: Power Logic
+
+## Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
+
+
+
+## Layout Design
+
+
