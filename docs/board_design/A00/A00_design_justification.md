@@ -97,7 +97,7 @@ In general:
 
 * PWM level shifted to 5V to work properly with fan. 
 * C13 is a decoupling capacitor for power rail of the fan. 
-* 
+* PWM signals pulled low via R8 and R11, so initial state of PWM is zero. 
 
 
 ### Page 6 of A00 Schematic: Power_1
@@ -105,6 +105,9 @@ In general:
 <p align="left">
 <img src=/design/A00/schematic_pages/Power_1.PNG height="700px"/>
 </p>
+
+* This is the battery charger circuit, with the battery charger IC of choice being MP2619 due to its low cost, availability and my team's experience with it. 
+* 
 
 ### Page 7 of A00 Schematic: Nano_IO
 
