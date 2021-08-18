@@ -35,6 +35,14 @@ The battery needed to be small, inexpensive, and be able to ideally power the Je
 
 I decided to go with the GOLDBAT because it was the smallest and cheapest battery available while hitting the hour long specification. 
 
+Some additional notes about batteries and battery chargers:
+* The C-rate specifies the speed a battery is charged or discharged. For example, a 1000 mAh battery discharged at 1 C should be able to maintain 1 A for 1 hour, and if it is discharged at 2 C, it should maintain 2A for 30 minutes. RC batteries in particular need to deliver huge amounts of current, and thus have high C ratings; however, this feature is not necessary for this project. 
+* NTC (negative temperature coefficient): resistance of the material decreases with temperature.
+* Constant Current: Vary the voltage to maintain a constant current flow, switching off when the voltage reaches the level of a full charge. The design is usually used for NiCd and NiMH cells or batteries
+* Constant Voltage: "allows the full current of the charger to flow into the battery until the power supply reaches its pre-set voltage.  The current will then taper down to a minimum value once that voltage level is reached."
+
+References: https://www.heliosps.com/knowledgebase/battery-charging-methods-terminology/ and Battery University. 
+
 ## Schematic Design
 
 In general:
