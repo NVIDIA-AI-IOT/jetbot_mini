@@ -78,7 +78,7 @@ In general:
 
 ### Page 10 of A00 Schematic: Power Logic
 
-## Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
+## Summary of Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
 
 
 
