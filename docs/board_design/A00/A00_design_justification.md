@@ -217,4 +217,57 @@ In general:
 
 ## Layout Design
 
+After schematic design was completed, a BOM was formulated and the footprints for the chosen parts were loaded into KiCAD. Some footprints were made by me, and others I downloaded from SnapEDA. The list of footprints that I downloaded from SnapEDA can be found [here](https://github.com/NVIDIA-AI-IOT/jetbot_mini/blob/main/design/A01/v1/README.md).
 
+The main design process for PCB layout is as folliows:
+
+Import Netlist --> Place IO and Footprints --> Determine Board Cutout --> Route High Speed Signals --> Route Power Paths --> Route Everything else --> Run DRC
+
+<p align="left">
+<img src=/design/A00/layout_design/front.PNG height="500px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/layout_design/Back.PNG height="500px"/>
+</p>
+
+### General Notes
+
+* The stackup for this board is four layers: signal, gnd, gnd, signal. The inner two ground layers are used as reference layers for diff pairs on the top and bottom layers and for shielding from switching node noise from buck converters. 
+* Copper pours were used wherever possible in order to minimize the resistance of the paths that the current travels through. Having a thin section of the power path essentially creates a resistor at that point. 
+* A good rule of thumb for determining how many vias you need for current paths is 1 A / via. 
+* A good mindset to have when starting routing on two layers is to have all the traces on one side be horizontal or vertical, and the traces on the other side be the opposite. This way the traces mesh together well when vias are used.
+* I tried to place components as close as possible to the needed pads on the SODIMM. 
+* Note that headers should be placed multiples of the pin pitch away from each other so that continuous rows of headers can be used. For example, the pitch used for this project is 2.54 mm, and so J9 is placed at x = 98.87, and J14 is placed at 103.95 mm, so 103.95-98.87 = 5.08, which is divisible by 2.54 mm.
+* I used the Saturn PCB and KiCAD trace tool to calculate impedance for traces and determine necessary trace widths to meet high speed signal requirements. These signal requirements can be found in the Jetson Nano datasheet. 
+* I referred to example layouts on datasheets whenever applicable. 
+* The reference ground planes underneath the ESD and SODIMM high speed connections must be voided to avoid parasitic capacitance. Note that when the differential pairs pass through the ESD diode or come out of the SODIMM, the traces are not able to maintain proper impedance matching properties.
+ * Ensure that there is a voided area that is 0.2 mm larger on all sides underneath the high speed pads on the SODIMM and through the ESD.
+* GS9238 (5V Buck Converter)
+ * The current return path was kept as small as possible. 
+ * There are less vias near pin 4 ground, as it is the analog ground and is used for control logic. Pins 12, 13, 14, 15, and 19 are used for Power ground, and thus require the 1A/via rule of thumb.
+* Silkscreen was used to mark important IO. 
+* Use Zone priority levels to create copper pours!
+* MP2619
+ * Current sense resistor R38, and resistors R36 and R37 are shown below, and must be routed like the following image in order to have most of the current pass through the current sense resistor and R36 and R37 get accurate data readings to provide to the battery charger.
+
+<p align="left">
+<img src=/design/A00/layout_design/current_sense.PNG height="400px"/>
+</p>
+
+### Component Placement
+
+<p align="left">
+<img src=/design/A00/layout_design/front_labeled.PNG height="500px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/layout_design/back_labeled.PNG height="500px"/>
+</p>
+
+* USB3 and uUSB were placed underneath the Jetson Nano module to save space; there is approximately 5mm of space between the baseboard and the Jetson Nano module, so a mid mount USB was used to make it fit. 
+* The battery charger was placed as close as possible to barrel jack and screw terminal.
+* The 5V Buck, 3V3 Buck and 5V_AO regulator were placed as close as possible to the battery charger, and the power branches out to the rest of the board. 
+* Screw terminals face inward as I initially thought the chassis design would have the battery underneath the baseboard, so having the terminals face inward would allow for easier connection. 
+* Power logic was placed as close as possible to the power button.
+* The motor headers are on the bottom of the baseboard as I initially thought the chassis design would have the motors underneath the baseboard, so this placement would allow for easier connection. 
