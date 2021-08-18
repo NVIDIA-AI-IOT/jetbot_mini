@@ -1,0 +1,55 @@
+jetbot@nano-4gb-jp45:~$ gst-launch-1.0 nvarguscamerasrc ! nvoverlaysink
+Setting pipeline to PAUSED ...
+Pipeline is live and does not need PREROLL ...
+Setting pipeline to PLAYING ...
+New clock: GstSystemClock
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3264 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3264 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 120.000005 fps Duration = 8333333 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0
+   Camera mode  = 2
+   Output Stream W = 1920 H = 1080
+   seconds to Run    = 0
+   Frame Rate = 29.999999
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+nvbuf_utils: dmabuf_fd -1 mapped entry NOT found
+nvbuf_utils: Can not get HW buffer from FD... Exiting...
+ERROR: from element /GstPipeline:pipeline0/GstNvArgusCameraSrc:nvarguscamerasrc0: CANCELLED
+Additional debug info:
+Argus Error Status
+Execution ended after 0:00:02.145475326
+Setting pipeline to PAUSED ...
+Setting pipeline to READY ...
+
+(gst-launch-1.0:7528): GStreamer-CRITICAL **: 13:43:12.999: gst_mini_object_set_qdata: assertion 'object != NULL' failed
+(Argus) Error EndOfFile: Unexpected error in reading socket (in src/rpc/socket/client/ClientSocketManager.cpp, function recvThreadCore(), line 266)
+(Argus) Error EndOfFile: Receive worker failure, notifying 1 waiting threads (in src/rpc/socket/client/ClientSocketManager.cpp, function recvThreadCore(), line 340)
+(Argus) Error InvalidState: Argus client is exiting with 1 outstanding client threads (in src/rpc/socket/client/ClientSocketManager.cpp, function recvThreadCore(), line 357)
+(Argus) Error EndOfFile: Receiving thread terminated with error (in src/rpc/socket/client/ClientSocketManager.cpp, function recvThreadWrapper(), line 368)
+(Argus) Error EndOfFile: Client thread received an error from socket (in src/rpc/socket/client/ClientSocketManager.cpp, function send(), line 145)
+(Argus) Error EndOfFile:  (propagating from src/rpc/socket/client/SocketClientDispatch.cpp, function dispatch(), line 87)
+(Argus) Error InvalidState: Receive thread is not running cannot send. (in src/rpc/socket/client/ClientSocketManager.cpp, function send(), line 96)
+(Argus) Error InvalidState:  (propagating from src/rpc/socket/client/SocketClientDispatch.cpp, function dispatch(), line 87)
+GST_ARGUS: Cleaning up
+(Argus) Error InvalidState: Receive thread is not running cannot send. (in src/rpc/socket/client/ClientSocketManager.cpp, function send(), line 96)
+(Argus) Error InvalidState:  (propagating from src/rpc/socket/client/SocketClientDispatch.cpp, function dispatch(), line 87)
+Caught SIGSEGV
+#0  0x0000007f9bf0d310 in __GI___pthread_timedjoin_ex (threadid=547859976688, thread_return=0x0, abstime=0x0, block=<optimized out>)
+#1  0x0000007f9bfc9968 in  () at /usr/lib/aarch64-linux-gnu/libglib-2.0.so.0
+#2  0x000000557b18c080 in  ()
+Spinning.  Please run 'gdb gst-launch-1.0 7528' to continue debugging, Ctrl-C to quit, or Ctrl-\ to dump core.
