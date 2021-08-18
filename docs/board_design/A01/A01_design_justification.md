@@ -74,6 +74,9 @@ https://user-images.githubusercontent.com/46247601/129977092-1d205fae-2e41-4213-
 
 > Note that the current hysteresis circuit has a feedback resistor of 4.12Mohms, which is huge and thus any difference in resistance due to tolerances might greatly affect the voltage thresholds. This circuit needs to be looked into further. 
 
+* The resistors R47 and R58 that limit current from the LEDs were increased from 150 ohms to 500 ohms to be safer. 
+
+
 ### Page 9 of A01 Schematic Power Logic
 
 <p align="left">
@@ -81,3 +84,6 @@ https://user-images.githubusercontent.com/46247601/129977092-1d205fae-2e41-4213-
 </p>
 
 The main changes from A00 are as follows:
+* How the power Power Logic should proceed is explained on the A01 schematic. 
+* An additional tri-state buffer, U14, was added in between the SHUTDOWN_REQ signal and the U12 buffer so that SHUTDOWN_REQ does not affect the RESET signal during the startup sequence. 
+* Note that R13 and C14 should be optimized further, as R13 is a huge resistor and any change due to tolerance might result in a large range of shutdown times. Smaller resistor values with a different RC ratio should be explored.  
