@@ -109,7 +109,17 @@ In general:
 </p>
 
 * This is the battery charger circuit, with the battery charger IC of choice being MP2619 due to its low cost, availability and my team's experience with it. 
-* 
+* Most of this circuit was referenced from the MP2619 datasheet example circuit. 
+* Some noteworthy features / things to keep in mind:
+ * This charger circuit DOES NOT feature charge balancing, so this will effect the longevity of your batteries. 
+ * An NTC thermistor is required for charging to occur. If the thermistor becomes too hot or cold, charging will stop. 
+ * DMP3056LSD-13 and DMP3056LDM-7 chosen with Vds that can handle at least 30V, as the highest voltage the battery charger can take is 26V. 
+ * R23 and R24 values calculated by: (20 V - 2 V) / 1000 = 0.018 A, with LEDs chosen to light up bright around 20mA. However, these resistor values were too low as 18mA is cutting it too close to max current of 20mA that is typical for LEDs, and were changed in A01. 
+ * R19 is no-stuffed (component not assembled) in order to give the user the option to 2S batteries. Currently with it floating the charger is configured for charging 3S batteries.
+ * R21 is 100k in order to align with the 100k NTC thermistors purchased, as they were the only ones I could find decently priced with the headers I wanted at the time. 
+ * J12 is the screw terminal to connect the battery; the battery I chose has an XT60 header, so the plan was to purchase an XT60 female header to wire adapter and screw the wires into the header. The XT60 headers are supposed to be 12 awg. Note that when I received A00, the screw terminals were too small to fit the XT60 connectors, and I needed to trim the wires to fit. 
+ * F1 chosen based off of power tree calculations: typical current draw is about 1.235A, and given 25% margin: 1.235 * 1.25 = 1.54 A, and fuse chosen with trip around 1.85A. 
+ * Capacitor and resistor values suggested by MP2619 datasheet.
 
 ### Page 7 of A00 Schematic: Nano_IO
 
