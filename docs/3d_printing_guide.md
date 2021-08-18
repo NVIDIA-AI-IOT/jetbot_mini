@@ -48,3 +48,8 @@ Once Cura is downloaded, go through the following steps to print:
 <img src=/assets/images/cura_screenshots/Cura_camera_3.JPG height="500px"/>
 </p>
 
+## Happy 3D Printing!
+
+https://user-images.githubusercontent.com/46247601/129832641-1ff7220b-bb9c-4e93-b1ce-75df9f29808f.mp4
+
+
