@@ -128,3 +128,63 @@ The following reworks were done to get the A00 baseboard ready for testing with 
 <p align="left">
 <img src=/design/A00/bringup_rework_images/rework_back.jpg height="400px"/>
 </p>
+
+### No-Stuffed Components
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_front_NS.jpg height="400px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/NS.PNG height="300px"/>
+</p>
+
+Some resistors that should have been assembled (stuffed) were not (no stuffed), and so I had to solder bridge the pads. 
+
+### Motor Controller GPIO
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_front_motor.jpg height="400px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/motor.PNG height="400px"/>
+</p>
+
+GPIO04, which A2 was connected to, could not be controlled via software, so I cut the trace and rerouted that GPIO to GPIO10. 
+
+### 3V3 Buck Converter Enable
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_front_3V3.jpg height="400px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_back_3V3.jpg height="400px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/3V3.PNG height="300px"/>
+</p>
+
+SYS_RST, which is used for the 3V3 Buck Converter enable signal, is on 1V8 logic, but the enable pin needs at least 2.2 V, so the 3V3 buck converter was not turning on. This was resolved by cutting the trace on the front and rerouting the enable to pin to 5V via an RC circuit set to charge to 98% of 5V after 20 ms to hit power sequencing requirements. 
+
+### Power Logic Buffer
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_back_buffer.jpg height="400px"/>
+</p>
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/buffer.PNG height="400px"/>
+</p>
+
+The SHUTDOWN_REQ signal was holding RESET low as the module is initially off, which means the power logic never turns on 5V, which never turns on the module. This loop prevents the baseboard from turning on. To get around this and test the board, the buffer connecting SHUTDOWN_REQ to RESET was removed, cutting off software shutdown capabilities but allowing the power logic to work as intended. 
+
+### Motor Header Stabilization
+
+<p align="left">
+<img src=/design/A00/bringup_rework_images/rework_back_solder.jpg height="400px"/>
+</p>
+
+The motor headers were poorly soldered to the baseboard and so were flexing and at times pulling off the baseboard; I added additional solder to stabilize the headers. 
