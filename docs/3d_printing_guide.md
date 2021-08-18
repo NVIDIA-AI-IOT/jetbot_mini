@@ -50,6 +50,10 @@ Once Cura is downloaded, go through the following steps to print:
 
 ## Happy 3D Printing!
 
-https://user-images.githubusercontent.com/46247601/129832641-1ff7220b-bb9c-4e93-b1ce-75df9f29808f.mp4
+
+
+https://user-images.githubusercontent.com/46247601/129833055-a0635bae-7684-466b-96b3-dfa1de1ba009.mp4
+
+
 
 
