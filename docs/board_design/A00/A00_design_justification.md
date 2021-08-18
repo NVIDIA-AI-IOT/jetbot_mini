@@ -168,7 +168,9 @@ In general:
 <img src=/design/A00/schematic_pages/Power_3.PNG height="700px"/>
 </p>
 
-**Please note that the buck converter calculations for the 5V and 3V3 bucks were incorrect, and are currently being fixed for A01. **
+**Please note that the buck converter calculations for the 5V and 3V3 bucks were incorrect, and are currently being fixed for A01.**
+
+* Calculate MLCC ESR and ESL by looking on charts given from manufacturer website at the target frequency for the buck converter. 
 
 ### Page 9 of A00 Schematic: Power_2
 
@@ -176,6 +178,9 @@ In general:
 <img src=/design/A00/schematic_pages/Power_2.PNG height="700px"/>
 </p>
 
+**Please note that the low battery LED comparator's threshold is way too low. To properly understand state of charge vs voltage, use the following [link](https://blog.ampow.com/lipo-voltage-chart/)
+
+* C46 switched from electrolytic to POSCAP to save on footprint size.
 
 ### Page 10 of A00 Schematic: Power Logic
 
@@ -183,6 +188,10 @@ In general:
 <img src=/design/A00/schematic_pages/Power_Logic.PNG height="700px"/>
 </p>
 
+* D10, R52, and C59 are no-stuffed debugging options. However, R52 needed to be stuffed to connect the button to the rest of the circuit. 
+* ESD diode D9 used to protect the rest of the circuit from ESD strikes on button. 
+* Logic explained in schematic.
+* "Disable for auto power on” jumper is always connected, so default state when powered on should be off.  
 
 ## Summary of Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
 
