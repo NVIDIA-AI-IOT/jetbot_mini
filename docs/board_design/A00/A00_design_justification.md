@@ -23,8 +23,17 @@ The power rails are summarized below:
 
 The battery needed to be small, inexpensive, and be able to ideally power the Jetbot Mini for 1 hour. After creating the power tree, typical current draw from the battery was determined to be around 1.235 A at 12 V, and so a 1500 mAh battery was pursued. The most viable and readily available option was an RC LiPo battery; note that the eventual battery charger chosen is technically a Li-Ion battery charger, but the two battery chemistries have a similar charging curve and I received approval to use it for LiPo batteries. The following table shows some of the options considered at the time:
 
-| Battery Name | Battery Type | Capacity | C Rating | Size (L x W x H, in) | Connector Type | Price Per Battery | Comments | Links |
+| Battery Name / Manufacturer | Battery Type | Capacity | C Rating | Size (L x W x H, in) | Connector Type | Price Per Battery | Comments | Links |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| INIU Power Bank | 5V / 3A High-Speed 2 USB ports | 10000 mAh | N/A | 5.1 x 2.7 x 0.6 | USB | $19.99 | Used on Original Nano | [Amazon](https://www.amazon.com/gp/product/B07H6LB4J4/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=jbstore074-20&linkId=28aad75b99de8dc39f7a8ee2fc5a15aa&language=en_US) |
+| Tattu | 3S LiPo | 1300 mAh | 45 C | 2.83 x 1.44 x 0.89 | XT60 | $15.99 | Cheap and small, but low capacity | [Amazon](https://www.amazon.com/Tattu-Battery-1300mAh-11-1V-Airplane/dp/B013I9RLVK/ref=sr_1_6?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-6) |
+| HOOVO | 3S LiPo | 1500 mAh | 120 C | 2.68 x 1.36 x 1.08 | XT60 | $15.50 | High discharge rate! 2 Pack. | [Amazon](https://www.amazon.com/HOOVO-Quadcopter-Helicopter-Airplane-Multi-Motor/dp/B07W1PFWB6/ref=sr_1_8?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-8) |
+| GOLDBAT | 3S LiPo| 1500 mAh | 100 C | 2.83 x 1.38 x 1 | XT60 | $13.99 | 2 Pack. High discharge rate, relatively low capacity. | [Amazon](https://www.amazon.com/GOLDBAT-Softcase-m4-fpv250-Shredder-Helicopter/dp/B07ZFDJWR1/ref=sr_1_23?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-23) |
+| Youme Power | 2S LiPo | 5200 mAh | 50 C | 5.31 x 1.65 x 0.83 | Deans T Plug | $17.99 | 2 Pack. Seems to be a bit large for a 2S battery | [Amazon](https://www.amazon.com/Battery-5200mAh-Helicopter-Airplane-Racing/dp/B07LGSCPFG/ref=sr_1_8?dchild=1&keywords=2s+lipo+battery&qid=1591674816&sr=8-8) | 
+| Ovonic | 2S LiPo | 5200 mAh | 50 C | 5.39 x 1.81 x 0.94 | Deans T Plug | $15.50 | 2 Pack. | [Amazon](https://www.amazon.com/OVONIC-Batteries-Dean-Style-Connector-Associated/dp/B07CVBQW5T/ref=sr_1_4?dchild=1&keywords=2s+lipo+battery&qid=1591674816&sr=8-4) |  
+| Tattu | 2S LiPo | 450 mAh | 75 C | 2.40 x 0.63 x 0.59 | XT30 Plug | $8.46 | 4 pack. Smallest battery so far! But also smallest capacity. | [Amazon](https://www.amazon.com/Tattu-Packs-450mAh-7-4V-Battery/dp/B07K18DJG5/ref=sr_1_7?dchild=1&keywords=2s+lipo+battery&qid=1591674816&sr=8-7) |
+
+I decided to go with the GOLDBAT because it was the smallest and cheapest battery available while hitting the hour long specification. 
 
 ## Schematic Design
 
