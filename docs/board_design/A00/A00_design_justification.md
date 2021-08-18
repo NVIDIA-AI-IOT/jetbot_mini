@@ -271,3 +271,4 @@ Import Netlist --> Place IO and Footprints --> Determine Board Cutout --> Route 
 * Screw terminals face inward as I initially thought the chassis design would have the battery underneath the baseboard, so having the terminals face inward would allow for easier connection. 
 * Power logic was placed as close as possible to the power button.
 * The motor headers are on the bottom of the baseboard as I initially thought the chassis design would have the motors underneath the baseboard, so this placement would allow for easier connection. 
+* A way to improve on this design might be to move the headers underneath the Jetson Nano module like with the B01 Dev Kit. 
