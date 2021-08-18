@@ -127,7 +127,40 @@ In general:
 <img src=/design/A00/schematic_pages/Nano_IO.PNG height="700px"/>
 </p>
 
-
+* Note that the I2C Lanes for the OLED display were connected incorrectly; the Jetbot uses I2C1 not I2C0, and thus the OLED display was not lighting up properly. This was fixed in A01. 
+ * Jetbot uses pins 3 and 5 on the GPIO 40 pin expansion header, which correspond to I2C1 lanes. 
+ * I2C OLED Display meant to go over the SODIMM module
+* U22: EEPROM used for Jetson Nano module, and is the same part as the one on the B01 Dev Kit. 10k resistors used as pull-up. Note that MLCC C54 is rated for 25V because there are other places that require 0.1uF with higher voltage ratings, and using the same capacitor as long as the voltage rating is above the requirement is advantageous to reduce the number of unique parts the manufacturer has to assemble. R53 used as a pull-down resistor.
+ * EEPROM is to store information about the baseboard, for example if remoting into the board you can check the EEPROM and determine information about the board. For example, A00 vs A01 iteration might have differences that software needs to know about, like GPIO definitions, etc.
+ * Write Protect: Connecting the WP pin to GND will ensure normal write operations. When the WP pin is connected to VCC, all write operations to the memory are inhibited.
+* UART Debug
+ * 6 pin connector used to maintain compatibility with [FTDI friend adaptor](https://www.adafruit.com/product/284).
+  * Note that the RX and TX are routed incorrectly, and needed to be switched with A01. 
+ * FTDI friend requires 3V3 – 5V signal lines, and tegra GPIO are on 1V8 logic, so need level shifter. 
+  * TXB0102DCUR replaced TXB0302DQMR, as the latter was not available in Seeed’s or JLCPCB’s libraries.
+* PMIC_BBAT powered from 5V_AO instead of a coin cell battery or supercap, as 5V_AO was already available and required less space on the PCB.
+ * PMIC used to maintain RTC (real-time clock) voltage when VDD_IN is not present.
+ * Requires further investigation, as 5V_AO is only on when VDD is present. 
+* MOD_SLEEP connected to the standby pin on motor controller for power saving purposes.
+ * Pin is low when module is sleeping, and high when module is in normal operation. Using this pin to control standby means the motor controller is on standby and using less power when module is sleeping.
+ * For Motor controller STBY Pin: VIH (STB) = VCC x 0.7 – VCC+0.2 and VIL (STB) = -0.2V – VCC x 0.3, with VCC = 3.3V, thus need level shifter
+* PWR_EN is fed from the 5V buck PGOOD, thus module will turn on when 5V rail is ready. 
+ * PGOOD signal is actively held low during shut down and soft-start status, open drain during soft start, and pulled up via external resistor to 5V_AO when soft start is finished. PWR_EN pin is on CMOS 5V logic.
+* SHUTDOWN_REQ is fed to the power logic to turn the Nano module off. 
+ * Note that there was a big issue with the power logic for shutdown request. 
+* SYS_RST used to turn on USB power switch and 3V3 buck, after the module turns on after receiving PGOOD signal.
+ * Note that SYS_RST is on 1V8 logic, while the 3V3 buck converter enable signal requires V_IH = 2.5V, so the 3V3 buck converter was not turning on at startup. This is addressed in A01.
+* VBUS_DET used to detect the presence of microUSB in the connector via a MOSFET level shifter. 
+ * Note that power is supplied by the MicroUSB host. 
+* GPIO10 on pin 212 and GPIO11_CLK on pin 216 used to detect charger ok and AC ok from the battery charger, they were available for use and thus thought it was a good idea to have additional information going to the module. The pins will be pulled low when ACOK and CHGOK go high. Internal pullups on the pins means default state will be logic high.
+ * Note that if LED is ON, then corresponding pin is LOW, which means GPIO should read HIGH. ACOK and CHGOK are active low pins. 
+* Low voltage warning from comparator circuit explained in the schematic, fed to the module for additional information. Purposely used open drain buffer to be on 1V8 logic. 
+* Motor controller and CAM PWDN pins fed through a level shifter to match the requirements of the TB6612FNG and camera.
+ * The GPIO are connected the way they are to ensure easy access on layout. 
+* Q9 and Q10 chosen as they were parts used elsewhere. 
+* Q6 and Q7 parts needed a large Vgs tolerance as the gate was exposed directly to voltage from the barrel jack.
+* D8 (B340A-13-F) chosen for similar specs with equivalent on B01 Dev Kit Schematic: D64 (LS34SG).
+* For U21, B01 uses TXB0302DQMR, we used TXB0102DCU, at the time was searching through Seeed’s parts library and come up with level shifter with similar specs.
 
 ### Page 8 of A00 Schematic: Power_3
 
@@ -135,6 +168,7 @@ In general:
 <img src=/design/A00/schematic_pages/Power_3.PNG height="700px"/>
 </p>
 
+**Please note that the buck converter calculations for the 5V and 3V3 bucks were incorrect, and are currently being fixed for A01. **
 
 ### Page 9 of A00 Schematic: Power_2
 
