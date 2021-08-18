@@ -1,3 +1,6 @@
 # A00 Software Setup
 
 **A00 IS NOT RECOMMENDED FOR MANUFACTURE; this documentation is more to show how I setup the A00 Jetbot Minis and as a reference for A01.**
+
+To setup software, go through the following steps:
+
