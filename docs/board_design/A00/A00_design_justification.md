@@ -44,6 +44,10 @@ In general:
 
 ### Page 2 of A00 Schematic: Camera
 
+<p align="left">
+<img src=/design/A00/schematic_pages/camera.PNG height="700px"/>
+</p>
+
 * Most of the camera connector (J2 and J3) connections were referenced from the B01 Developer Kit files. 
 * No ESD on the CAM0_I2C_SDA, CAM0_I2C_SCL, CAM1_I2C_SDA, and CAM1_I2C_SCL lanes, as the TC7USB40FT has ESD on the output lines.
 * TPD4E05U06DQAR ESD diodes chosen due to availability in Seeed’s libraries and because they are compatible with USB 3.0; using these diodes for the CSI lanes eliminates the need for separate ESD diodes. They have 0.5pF capacitance. Datasheet states compatibility with high speed signals. 
@@ -53,6 +57,10 @@ In general:
 * Note that only a 0.1 uF capacitor is needed on the power rail of the camera connector, as the parasitics from the ribbon cable that connects the camera module to the camera connector prevents the camera board from seeing the additional capacitors effectively. The current spikes that the capacitors are meant to deal with are negated by the inductance of the camera ribbon cable.  
 
 ### Page 3 of A00 Schematic: Motors
+
+<p align="left">
+<img src=/design/A00/schematic_pages/motor.PNG height="700px"/>
+</p>
 
 * The same motor controller IC as the Jetbot, the TB6612FNG, was used to ensure compatibility with Jetbot software. Note that the A00 baseboard uses GPIO instead of I2C to control the motors.
 * Motor speed is controlled via PWMA and PWMB. 
@@ -64,19 +72,52 @@ In general:
 
 ### Page 4 of A00 Schematic: USB
 
+<p align="left">
+<img src=/design/A00/schematic_pages/USB.PNG height="700px"/>
+</p>
 
 
 ### Page 5 of A00 Schematic: Fan
 
+<p align="left">
+<img src=/design/A00/schematic_pages/Fan.PNG height="700px"/>
+</p>
+
+
 ### Page 6 of A00 Schematic: Power_1
+
+<p align="left">
+<img src=/design/A00/schematic_pages/Power_1.PNG height="700px"/>
+</p>
 
 ### Page 7 of A00 Schematic: Nano_IO
 
+<p align="left">
+<img src=/design/A00/schematic_pages/Nano_IO.PNG height="700px"/>
+</p>
+
+
+
 ### Page 8 of A00 Schematic: Power_3
+
+<p align="left">
+<img src=/design/A00/schematic_pages/Power_3.PNG height="700px"/>
+</p>
+
 
 ### Page 9 of A00 Schematic: Power_2
 
+<p align="left">
+<img src=/design/A00/schematic_pages/Power_2.PNG height="700px"/>
+</p>
+
+
 ### Page 10 of A00 Schematic: Power Logic
+
+<p align="left">
+<img src=/design/A00/schematic_pages/Power_Logic.PNG height="700px"/>
+</p>
+
 
 ## Summary of Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
 
