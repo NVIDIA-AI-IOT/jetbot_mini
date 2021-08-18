@@ -97,7 +97,9 @@ In general:
 
 * PWM level shifted to 5V to work properly with fan. 
 * C13 is a decoupling capacitor for power rail of the fan. 
-* PWM signals pulled low via R8 and R11, so initial state of PWM is zero. 
+* PWM signals pulled low via R8 and R11, so initial state of PWM is zero.
+* The Tach signal uses a level shifter (that should only be used with open drain signals!) that works as follows: the FAN_HEADER_TACH signal will output a square wave that drives low and has an open drain high that is pulled to 5V via R12. When the signal is driven low, the drain of Q3 is drive low. Before this time, Q2 was off as the gate and source are connected to 1V8, meaning Vgs = 0 < Vgsth; however, when the drain of Q2 is driven low, the body diode is in forward bias and thus connects source to zero. The current path from 1V8 to 0 has R10 in the way, so current is not too high. Q2 is turned on, and the FAN_TACH sees a logic low. When FAN_HEADER_TACH is driven high to 5V, the body diode is in reverse bias, which disconnects the source from the drain and turns off Q2. In this state, FAN_TACH sees 1V8, or a logic high. Thus, FAN_TACH sees a square wave ranging from 0 to 1V8, whose frequency is proportional to the fan speed. 
+
 
 
 ### Page 6 of A00 Schematic: Power_1
