@@ -203,7 +203,17 @@ In general:
 
 ## Summary of Issues with A00 Schematic Design Identified During Bring-Up and Design Reviews
 
-
+| Sheet | Issue | Solution in A01 |
+| :--- | :--- | :--- |
+| Power_Logic, Power_1 | R52 and R22 were not stuffed | BOM makes sure R22 and R52 are stuffed |
+| Power_Logic | SHUTDOWN_REQ is holding RESET or SR Latch low, preventing the 5V rail of the baseboard from turning on | Add a tri-state buffer in between SHUTDOWN_REQ and U12 buffer |
+| Nano_IO | RX and TX are not routed to match FTDI Friend | Swap RX and TX in schematic and layout for UART Header |
+| Nano_IO | No FORCE_RECOVERY option | Added two pin header for FORCE_RECOVERY option |
+| Power_1 | XT60 connectors need to be trimmed to fit Screw terminal | Need to consider different Screw Terminals or connector |
+| Power_3 | 3V3 Buck converter never turns on as SYS_RST is too low voltage for enable pin | Added transistor level shifter in between SYS_RST and 3V3 Buck Converter enable |
+| Nano_IO | OLED display does not turn on as I2C is routed to I2C0 instead of I2C1 | Change I2C to go to I2C1 for schematic and layout |
+| Power_3 | 5V Buck Converter boots up to around 5.20 - 5.38 V | Fixed feedback network, but also need to consider different buck converter |
+| Power_2 | Low Power LED Flickers and Voltage threshold is too low | Added hysteresis and fixed voltage levels |
 
 ## Layout Design
 
