@@ -42,6 +42,8 @@ To get setup for the layout design, you need the following SnapEDA footprint fil
 | 74LVC1G126W5-7, 74LVC1G07W5-7 | Tri-State Buffer | U11, U12, U14, U31 | https://www.snapeda.com/parts/74LVC1G126W5-7/Diodes%20Inc./view-part/234182/?ref=search&t=74LVC1G126W5-7 |
 | B3SL-1022P | Push Button | SW1 | https://www.snapeda.com/parts/B3SL-1022P/Omron/view-part/215208/?ref=search&t=B3SL-1022P |
 | 1-1734248-5 | Camera Connectors | J2, J3 | https://www.snapeda.com/parts/1-1734248-5/TE%20Connectivity/view-part/?ref=te_in&t=1-1734248-5&con_ref=None |
+| B340A-13-F | Schottky Diode | D5, D8 | https://www.snapeda.com/parts/B340A-13-F/Diodes%20Inc./view-part/78704/?ref=search&t=B340A-13_F |
+| LQH44PN100MP0L | 10uH Inductor for 3V3 Buck | L1 | https://www.snapeda.com/parts/LQH44PN100MP0L/Murata/view-part/4547005/?ref=search&t=LQH44PN100MP |
 
 In order to import the footprints, go through the following steps:
 1. Download the KiCAD files to your computer
