@@ -18,5 +18,6 @@ https://user-images.githubusercontent.com/46247601/129587346-760dd624-837d-4d27-
 
 ## Get involved
 
+Refer to [this](https://github.com/NVIDIA-AI-IOT/jetbot_mini/blob/main/docs/getting_started_with_A00.md) document to get a sense of how to use this repository and learn from this project!
 This project is intended as a learning tool for makers, and any feedback related to the project is greatly appreciated!
 * Report a bug by [creating an issue](https://github.com/NVIDIA-AI-IOT/jetbot_mini/issues)
