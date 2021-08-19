@@ -4,6 +4,8 @@
 
 To get setup with the Jetbot Mini, please step through the hardware and software setup. 
 
+For a brief overview of the project, refer to [this](https://github.com/NVIDIA-AI-IOT/jetbot_mini/blob/main/docs/project_overview.md) documentation. 
+
 If you would like to learn more about the design of the Jetbot Mini, I recommend checking out the [board design](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/docs/board_design), [chassis](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/docs/chassis) and [software](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/docs/software) documentation.
 
 The KiCAD design files are located [here](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/design).
