@@ -4,7 +4,7 @@
 <img src=/assets/images/chassis/Jetbot_Mini_v9_Vertical_Chassis.PNG height="350px"/>
 </p>
 
-This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was overall the smallest chassis and did not have the turning issue of v8. 
+This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was overall the smallest and most balanced chassis design.  
 
 ## Specifications
 
@@ -18,7 +18,7 @@ This was the chassis used to test the A00 Baseboard on the LEGO roads, as it was
 | Center of Mass Height | 48 | mm | 
 | Max Speed Around Turn | ~0.46 | m/s |
 
-Calculations are explained in Chassis Documentation. 
+Calculations are explained in [Chassis Documentation](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/docs/chassis). 
 
 ## Pololu Parts
 
