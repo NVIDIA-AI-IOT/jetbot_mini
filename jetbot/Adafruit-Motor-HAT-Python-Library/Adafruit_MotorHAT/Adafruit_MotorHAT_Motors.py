@@ -10,7 +10,7 @@
 
 # Written by Limor Fried for Adafruit Industries. MIT license. 
 
-# Modified by Joshua Yoon to work with GPIO instead of I2C
+# Modified by Joshua Yoon, NVIDIA Corporation & Affiliates, to work with GPIO instead of I2C
 
 import time
 import math
