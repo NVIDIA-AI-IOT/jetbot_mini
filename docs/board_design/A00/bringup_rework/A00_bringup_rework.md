@@ -104,8 +104,7 @@ The following table summarized bring-up findings:
 | Camera Modules | Passed | Front camera works, test with B01 instead of A02!! |
 | Fan | Passed | Able to get RPM readings and control speeds with PWM, used Noctua 40 mm |
 | OLED | Passed | Need to change from I2C0 to I2C1 to match Jetbot |
-| USB 2.0 Micro-B | Passed | Able to 
-see device when in recovery mode |
+| USB 2.0 Micro-B | Passed | Able to see device when in recovery mode |
 | 10s Button Press Shutdown | Passed | Need to optimize component choice |
 | Button Power On | Passed | Resistor that connects button to circuit was NS, also requires removal of buffer in power logic circuit |
 | UART | Passed | Able to make serial connection using FTDI friend |
