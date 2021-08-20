@@ -77,7 +77,7 @@ https://user-images.githubusercontent.com/46247601/129977092-1d205fae-2e41-4213-
 * The resistors R47 and R58 that limit current from the LEDs were increased from 150 ohms to 500 ohms to be safer. 
 
 
-### Page 9 of A01 Schematic Power Logic
+### Page 10 of A01 Schematic Power Logic
 
 <p align="left">
 <img src=/design/A01/schematic_pages/power_logic.PNG height="700px"/>
