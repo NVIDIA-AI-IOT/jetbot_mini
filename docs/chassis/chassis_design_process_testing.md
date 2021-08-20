@@ -19,7 +19,7 @@ This calculation was done with the help of Eric Nguyen and puts a constraint on 
 <img src=/docs/chassis/tipping_calcs.png height="400px"/>
 </p>
 
-This calculation was done with the help of Lauren Sibley and Max Camposano. This is a stability calculation; notice that there is centripedal force acting on the center of gravity and normal force acting on the outer wheel. If the work done by the centripedal force exceeds the work done by the normal force, then the robot will tip. 
+This calculation was done with the help of Lauren Sibley and Max Camposano. This is a stability calculation; notice that there is centripetal force acting on the center of gravity and normal force acting on the outer wheel. If the work done by the centripetal force exceeds the work done by the normal force, then the robot will tip. 
 
 The following video shows how I confirmed the footprint size calculation; I would design a chassis, create a rectangle with its width and length specifications, constrain the rectangle to the inner curve of the LEGO turn in CAD, and try to drag the rectangle back and forth. Again, this test assumes perfect movement and so is not exact, but it is a good indicator of whether the designed chassis is in the right ball park. 
 
