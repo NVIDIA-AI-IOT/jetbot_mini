@@ -219,7 +219,7 @@ In general:
 
 After schematic design was completed, a BOM was formulated and the footprints for the chosen parts were loaded into KiCAD. Some footprints were made by me, and others I downloaded from SnapEDA. The list of footprints that I downloaded from SnapEDA can be found [here](https://github.com/NVIDIA-AI-IOT/jetbot_mini/blob/main/design/A01/v1/README.md).
 
-The main design process for PCB layout is as folliows:
+The main design process for PCB layout is as follows:
 
 Import Netlist --> Place IO and Footprints --> Determine Board Cutout --> Route High Speed Signals --> Route Power Paths --> Route Everything else --> Run DRC
 
