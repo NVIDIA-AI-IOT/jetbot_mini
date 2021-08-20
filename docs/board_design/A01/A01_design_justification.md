@@ -21,7 +21,7 @@ I will step through the A01 schematic and highlight and explain the features and
 ### Page 6 of A01 Schematic: Power_1
 
 <p align="left">
-<img src=/design/A01/schematic_pages/power_1.PNG height="700px"/>
+<img src=/design/A01/schematic_pages/power_1_v2.PNG height="700px"/>
 </p>
 
 The main changes from A00 are as follows:
