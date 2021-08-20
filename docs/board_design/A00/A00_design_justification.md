@@ -127,7 +127,6 @@ In general:
  * R21 is 100k in order to align with the 100k NTC thermistors purchased, as they were the only ones I could find decently priced with the headers I wanted at the time. 
  * J12 is the screw terminal to connect the battery; the battery I chose has an XT60 header, so the plan was to purchase an XT60 female header to wire adapter and screw the wires into the header. The XT60 headers are supposed to be 12 awg. Note that when I tested them with the A00 baseboard, the screw terminals were too small to fit the XT60 connectors, and I needed to trim the wires to fit. 
  * F1 chosen based off of power tree calculations: typical current draw is about 1.235A, and given 25% margin: 1.235 * 1.25 = 1.54 A, and fuse chosen with trip around 1.85A. 
- * Capacitor and resistor values suggested by MP2619 datasheet.
 
 ### Page 7 of A00 Schematic: Nano_IO
 
