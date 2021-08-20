@@ -7,7 +7,7 @@
 This is the Jetbot Mini project, a smaller iteration of the [Jetbot](https://github.com/NVIDIA-AI-IOT/jetbot)! Some key features are as follows:
 * Onboard motor controller and battery charger to reduce costs and wire clutter
 * Custom baseboard for the Jetson Nano module
-* A smaller chassis that can achieve two way traffic on the LEGO roads used to test the original Jetbot
+* A smaller chassis that can achieve two way traffic (i.e., two robots running on the road at the same time) on the LEGO roads used to test the original Jetbot
 * Designed with KiCAD and Onshape for easy maker access
 
 This project aims to be an accessible example project that uses the Jetson Nano platform and a custom baseboard, so any feedback about the design is welcome. 
