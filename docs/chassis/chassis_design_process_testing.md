@@ -60,7 +60,7 @@ The following image shows the prototypes for V8 and V9:
 In order to test the robots, I had to integrate GPIO into the software, as the original Jetbot uses an external motor driver that is controlled with I2C. I essentially ripped / commented out the I2C dependence in the critical software files and replaced it with GPIO control using the Jetson GPIO library. 
 The Jetbot Mini software can be found [here](https://github.com/NVIDIA-AI-IOT/jetbot_mini/tree/main/jetbot).
 
-I tested the robots using the [Basic Motion](https://github.com/NVIDIA-AI-IOT/jetbot/tree/master/notebooks/basic_motion) and [Road Following](https://github.com/NVIDIA-AI-IOT/jetbot/tree/master/notebooks/road_following) exmaples from the Jetbot repository. 
+I tested the robots using the [Basic Motion](https://github.com/NVIDIA-AI-IOT/jetbot/tree/master/notebooks/basic_motion) and [Road Following](https://github.com/NVIDIA-AI-IOT/jetbot/tree/master/notebooks/road_following) examples from the Jetbot repository. 
 
 It turns out that V9 is the better chassis choice as for V8, when looking at the back view of the chassis, the center of mass is shifted slightly to the right due to the mounting nature of the baseboard. This means the left motor does get good traction with the ground, and so the V8 chassis has trouble turning to the rigth. I discovered this after noticing the robot having trouble turning right, and when I placed pressure on the left part of the chassis, the robot turned more easily. 
 The following image visualizes the center of mass:
