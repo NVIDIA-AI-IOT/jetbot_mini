@@ -47,7 +47,7 @@ References: https://www.heliosps.com/knowledgebase/battery-charging-methods-term
 
 In general:
 * 0 ohm resistors are used throughout the design for testing purposes; they can be used as points to attach probe wires and inject noise.
-* You will often see capacitors on the input rails to ICs and power supplies; these capacitors are there to help deal with noise, stabilize the power supply and voltage ripple, and help with sudden current requirements. The impedance of a capacitor is dictated by 1/jwC, where w is 2 x pi x frequency and C is the capacitance; at high frequencies, the impedance of a capacitor is near zero, which means the component is essentially a short to ground. This means high frequency noise is shunted to ground instead of entering the IC. Also, the capacitors act as small voltage reservoirs, and thus if the input voltage dips below the stored voltage, the capacitor can briefly supply power to the IC. In addition, the smaller 0.1uF capacitors are to help if the IC needs to pull a sharp current suddently, perhaps due to a change in load. Larger capacitors will have ESR (equivalent series resistance) and ESL (equivalent series inductance) which will fight against that current pull, but smaller capacitors have smaller parasitics that help facilitate large current draw. These small 0.1uF capacitors do not store that much power, but will help with the sudden rising and falling edges for things like digital circuits. 
+* You will often see capacitors on the input rails to ICs and power supplies; these capacitors are there to help deal with noise, stabilize the power supply and voltage ripple, and help with sudden current requirements. The impedance of a capacitor is dictated by 1/jwC, where w is 2 x pi x frequency and C is the capacitance; at high frequencies, the impedance of a capacitor is near zero, which means the component is essentially a short to ground. This means high frequency noise is shunted to ground instead of entering the IC. Also, the capacitors act as small voltage reservoirs, and thus if the input voltage dips below the stored voltage, the capacitor can briefly supply power to the IC. In addition, the smaller 0.1uF capacitors are to help if the IC needs to pull a sharp current suddenly, perhaps due to a change in load. Larger capacitors will have ESR (equivalent series resistance) and ESL (equivalent series inductance) which will fight against that current pull, but smaller capacitors have smaller parasitics that help facilitate large current draw. These small 0.1uF capacitors do not store that much power, but will help with the sudden rising and falling edges for things like digital circuits. 
 * The following [forum page](https://forum.digikey.com/t/calculating-capacitor-esr-from-tan/2633) is useful for calculating MLCC parasitic values. MLCC ESR and ESL values are also often listed on the manufacturer website in the form of graphs.
 
 ### Page 2 of A00 Schematic: Camera
@@ -58,7 +58,7 @@ In general:
 
 * Most of the camera connector (J2 and J3) connections were referenced from the B01 Developer Kit files. 
 * No ESD on the CAM0_I2C_SDA, CAM0_I2C_SCL, CAM1_I2C_SDA, and CAM1_I2C_SCL lanes, as the TC7USB40FT has ESD on the output lines.
-* TPD4E05U06DQAR ESD diodes chosen due to availability in Seeed’s libraries and because they are compatible with USB 3.0; using these diodes for the CSI lanes eliminates the need for separate ESD diodes. They have 0.5pF capacitance. Datasheet states compatibility with high speed signals. 
+* TPD4E05U06DQAR ESD diodes chosen due to availability in target manufacturer libraries and because they are compatible with USB 3.0; using these diodes for the CSI lanes eliminates the need for separate ESD diodes. They have 0.5pF capacitance. Datasheet states compatibility with high speed signals. 
 * CAM0 and CAM1 PWDN signals are level shifted from 1V8 to 3V3 for compatibility with new higher quality raspberry pi cameras; note that the B01 Developer Kit is not compatible with these cameras. 
 * U4 is a mux used to switch between camera 1 and camera 2. 
 * Note that when the Jetson Nano module boots up, it pings the camera I2C lanes to see if a camera module is attached and employs a startup sequence with PWDN; if no camera module is detected, calling camera commands will not send any data to the camera lanes. 
@@ -87,9 +87,9 @@ In general:
 </p>
 
 * This part of the circuit was heavily referenced from the B01 Developer Kit schematic.
-* TPD4E05U06DQAR ESD diodes were chosen due to their compability with USB devices and should be placed as close as possible to the connector on the layout.
-* MicroUSB: J7
-  * D1 to protect against ESD strikes when user pulls MicroUSB head in and out of the connector. 
+* TPD4E05U06DQAR ESD diodes were chosen due to their compatibility  with USB devices and should be placed as close as possible to the connector on the layout.
+* microUSB: J7
+  * D1 to protect against ESD strikes when user pulls microUSB head in and out of the connector. 
   * R7 pulls the gate of Q1 initially low, and when a microUSB is connected VBUS_DET is connected to ground and lets the Nano module know that something is connected.
 * USB3 Type-A: J8
   * C7 and C8 are AC-coupling capacitors and should be placed as close as possible to the transmission source on the layout. AC-coupling capacitors block DC bias. 
@@ -125,7 +125,7 @@ In general:
  * R23 and R24 values calculated by: (20 V - 2 V) / 1000 = 0.018 A, with LEDs chosen to light up bright around 20mA. However, these resistor values were too low as 18mA is cutting it too close to max current of 20mA that is typical for LEDs, and were changed in A01. 
  * R19 is no-stuffed (component not assembled) in order to give the user the option to 2S batteries. Currently with it floating the charger is configured for charging 3S batteries.
  * R21 is 100k in order to align with the 100k NTC thermistors purchased, as they were the only ones I could find decently priced with the headers I wanted at the time. 
- * J12 is the screw terminal to connect the battery; the battery I chose has an XT60 header, so the plan was to purchase an XT60 female header to wire adapter and screw the wires into the header. The XT60 headers are supposed to be 12 awg. Note that when I received A00, the screw terminals were too small to fit the XT60 connectors, and I needed to trim the wires to fit. 
+ * J12 is the screw terminal to connect the battery; the battery I chose has an XT60 header, so the plan was to purchase an XT60 female header to wire adapter and screw the wires into the header. The XT60 headers are supposed to be 12 awg. Note that when I tested them with the A00 baseboard, the screw terminals were too small to fit the XT60 connectors, and I needed to trim the wires to fit. 
  * F1 chosen based off of power tree calculations: typical current draw is about 1.235A, and given 25% margin: 1.235 * 1.25 = 1.54 A, and fuse chosen with trip around 1.85A. 
  * Capacitor and resistor values suggested by MP2619 datasheet.
 
@@ -155,7 +155,7 @@ In general:
 * PWR_EN is fed from the 5V buck PGOOD, thus module will turn on when 5V rail is ready. 
  * PGOOD signal is actively held low during shut down and soft-start status, open drain during soft start, and pulled up via external resistor to 5V_AO when soft start is finished. PWR_EN pin is on CMOS 5V logic.
 * SHUTDOWN_REQ is fed to the power logic to turn the Nano module off. 
- * Note that there was a big issue with the power logic for shutdown request. 
+ * Note that there was a big issue with the power logic for shutdown request, as it holds the RESET pin of the SR latch low, preventing the power logic from turning on the 5V buck converter
 * SYS_RST used to turn on USB power switch and 3V3 buck, after the module turns on after receiving PGOOD signal.
  * Note that SYS_RST is on 1V8 logic, while the 3V3 buck converter enable signal requires V_IH = 2.5V, so the 3V3 buck converter was not turning on at startup. This is addressed in A01.
 * VBUS_DET used to detect the presence of microUSB in the connector via a MOSFET level shifter. 
