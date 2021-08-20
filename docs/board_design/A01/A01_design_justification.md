@@ -43,7 +43,7 @@ The main changes from A00 are as follows:
   * The level shifter works as follows: SYS_RST will go high once module start-up sequence is completed. Initially when SYS_RST is low, Q9 is off, which means Q10 is ON, which pulls SYS_RST_OUT to ground. When SYS_RST goes high, Q9 is turned on, turning off Q10, which allows SYS_RST_OUT to be pulled high via R71 5V. Thus in the initially startup sequence, the 3V3 buck converter enable signal is pulled low, and once the startup sequence finishes and SYS_RST goes high, the enable signal will be pulled to 5V. 
   * 3V3 buck and USB power switch have V_IH = 2.5 V and V_IH = 1.5 V respectively, and AP6503 has V_EN ratings from -0.3 to 6V and RT9742 has V_EN ratings from -0.3 to 7V.
   * Cannot use one transistor, as when SYS_RST is pulled LOW, the transistor will be off meaning SYS_RST_OUT will be pulled high, which is the opposite of what we want.
-* MC_A2 is now routed to GPIO09 instead of GPIO04, to bypass the software issue with GPIO04. Note that I need to consider rereouting all the motor control GPIO to GPIO on the 40 pin header for easier control. 
+* MC_A2 is now routed to GPIO09 instead of GPIO04, to bypass the software issue with GPIO04. Note that I need to consider rerouting all the motor control GPIO to GPIO on the 40 pin header for easier control. 
 
 ### Page 8 of A01 Schematic: Power_3
 
@@ -52,7 +52,7 @@ The main changes from A00 are as follows:
 </p>
 
 The main changes from A00 are as follows:
-* R39 has been changed from 5% tolerance to 1% tolerance to allow for more precise voltage output. Large tolerances can mean large errors in the feedback that result in wide ouptut voltage ranges, which is not ideal. 
+* R39 has been changed from 5% tolerance to 1% tolerance to allow for more precise voltage output. Large tolerances can mean large errors in the feedback that result in wide output voltage ranges, which is not ideal. 
 * R41 and R42 have been changed to resistor values that correctly output 5V based off of Vfb = 0.8 V. 
   * Typically to calculate the feedback network for a buck converter, the IC will have a fixed voltage Vfb, and so with a target output voltage, you can calculate resistor values using a simple resistor divider equation. I was not aware of this when designing A00. 
 * Note that some of the capacitors need to be changed to higher voltage ratings, like C19, C38, and C36. 
