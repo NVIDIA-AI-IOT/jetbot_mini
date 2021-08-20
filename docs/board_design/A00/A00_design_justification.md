@@ -25,7 +25,7 @@ The battery needed to be small, inexpensive, and be able to ideally power the Je
 
 | Battery Name / Manufacturer | Battery Type | Capacity | C Rating | Size (L x W x H, in) | Connector Type | Price Per Battery | Comments | Links |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| INIU Power Bank | 5V / 3A High-Speed 2 USB ports | 10000 mAh | N/A | 5.1 x 2.7 x 0.6 | USB | $19.99 | Used on Original Nano | [Amazon](https://www.amazon.com/gp/product/B07H6LB4J4/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=jbstore074-20&linkId=28aad75b99de8dc39f7a8ee2fc5a15aa&language=en_US) |
+| INIU Power Bank | 5V / 3A High-Speed 2 USB ports | 10000 mAh | N/A | 5.1 x 2.7 x 0.6 | USB | $19.99 | Used on Original Jetbot | [Amazon](https://www.amazon.com/gp/product/B07H6LB4J4/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=jbstore074-20&linkId=28aad75b99de8dc39f7a8ee2fc5a15aa&language=en_US) |
 | Tattu | 3S LiPo | 1300 mAh | 45 C | 2.83 x 1.44 x 0.89 | XT60 | $15.99 | Cheap and small, but low capacity | [Amazon](https://www.amazon.com/Tattu-Battery-1300mAh-11-1V-Airplane/dp/B013I9RLVK/ref=sr_1_6?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-6) |
 | HOOVO | 3S LiPo | 1500 mAh | 120 C | 2.68 x 1.36 x 1.08 | XT60 | $15.50 | High discharge rate! 2 Pack. | [Amazon](https://www.amazon.com/HOOVO-Quadcopter-Helicopter-Airplane-Multi-Motor/dp/B07W1PFWB6/ref=sr_1_8?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-8) |
 | GOLDBAT | 3S LiPo| 1500 mAh | 100 C | 2.83 x 1.38 x 1 | XT60 | $13.99 | 2 Pack. High discharge rate, relatively low capacity. | [Amazon](https://www.amazon.com/GOLDBAT-Softcase-m4-fpv250-Shredder-Helicopter/dp/B07ZFDJWR1/ref=sr_1_23?dchild=1&keywords=3S+Lipo&qid=1591672204&sr=8-23) |
