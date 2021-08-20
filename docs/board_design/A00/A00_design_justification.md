@@ -113,7 +113,7 @@ In general:
 ### Page 6 of A00 Schematic: Power_1
 
 <p align="left">
-<img src=/design/A00/schematic_pages/Power_1.PNG height="700px"/>
+<img src=/design/A00/schematic_pages/Power_1_v2.PNG height="700px"/>
 </p>
 
 * This is the battery charger circuit, with the battery charger IC of choice being MP2619 due to its low cost, availability and my team's experience with it. 
